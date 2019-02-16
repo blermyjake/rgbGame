@@ -15,6 +15,12 @@ init();
 function init() {
   // mode button event listeners
   for (var i = 0; i < modeButtons.length; i++) {
+    setupModeButtons();
+    setupSquares();
+    reset();
+  }
+
+  function setupModeButtons() {
     modeButtons[i].addEventListener("click", function() {
       modeButtons[0].classList.remove("selected");
       modeButtons[1].classList.remove("selected");
@@ -29,7 +35,9 @@ function init() {
       reset();
     });
   }
+}
 
+function setupSquares() {
   for (var i = 0; i < squares.length; i++) {
     //   add click listener to squares
     squares[i].addEventListener("click", function() {
@@ -48,7 +56,6 @@ function init() {
       }
     });
   }
-  reset();
 }
 
 function reset() {
